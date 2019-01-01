@@ -23,7 +23,6 @@ client.on("message", async message => {
         message.channel.send(botembed);
     }
 });
-});
 //onduty role
 client.on("message", async message => {
     let prefix = botconfig.prefix;

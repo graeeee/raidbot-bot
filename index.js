@@ -95,4 +95,4 @@ bot.on("message", async message => {
                 message.member.removeRole(dab)
     }
 });
-bot.login(botconfig.token);
+bot.login(process.env.BOT_TOKEN);

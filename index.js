@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true})
 
 client.on("ready", async () => {
-    console.log(`${bot.user.username} is online!`);
+    console.log(`${client.user.username} is online!`);
     bot.user.setActivity("Raidboss bot doody");
 });
 //onduty2

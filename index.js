@@ -4,7 +4,7 @@ const client = new Discord.Client({diableEveryone: true})
 
 client.on("ready", async () => {
     console.log(`${client.user.username} is online!`);
-    bot.user.setActivity("Raidboss bot doody");
+    client.user.setActivity("Raidboss bot doody");
 });
 //onduty2
 client.on("message", async message => {

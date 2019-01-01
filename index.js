@@ -1,13 +1,13 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
-const bot = new Discord.Client({diableEveryone: true})
+const client = new Discord.Client({diableEveryone: true})
 
-bot.on("ready", async () => {
+client.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
     bot.user.setActivity("Raidboss bot doody");
 });
 //onduty2
-bot.on("message", async message => {
+client.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
  
@@ -24,7 +24,7 @@ bot.on("message", async message => {
     }
 });
 //onduty role
-bot.on("message", async message => {
+client.on("message", async message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -53,7 +53,7 @@ bot.on("message", async message => {
     }
 });
 //offduty role
-bot.on("message", async message => {
+client.on("message", async message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -81,7 +81,7 @@ bot.on("message", async message => {
         }
     }
 });
-bot.on("message", async message => {
+client.on("message", async message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -95,4 +95,4 @@ bot.on("message", async message => {
                 message.member.removeRole(dab)
     }
 });
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);

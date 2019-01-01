@@ -1,4 +1,4 @@
-const botconfig =require("botconfig.json");
+const botconfig =require("./botconfig.json");
 const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true})
 const BOT_TOKEN = BOT_TOKEN

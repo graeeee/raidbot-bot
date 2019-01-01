@@ -1,6 +1,6 @@
-const botconfig = require("botconfig.json");
 const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true})
+const BOT_TOKEN = BOT_TOKEN
 
 client.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
@@ -31,7 +31,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
     let onduty = (`${prefix}onduty`)
    
-    if (message.channel.id === '524786824342929408') {
+    if (message.channel.id === '529421034781147156') {
         if((message.content!=onduty)) {
             await message.delete(5000)
             message.author.send('Please use the command !onduty or !offduty.');
@@ -60,7 +60,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
     let offduty = (`${prefix}offduty`)
    
-    if (message.channel.id === '524786824342929408') {
+    if (message.channel.id === '529421034781147156') {
         if((message.content!=offduty)) {
             await message.delete(5000)
             message.author.send('Please use the command !offduty.');

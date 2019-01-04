@@ -40,7 +40,7 @@ client.on("message", async message => {
             if(cmd === onduty){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")
-                .addField("OnDuty Rank Given","You are now OnDuty.");  
+                .addField(`OnDuty Rank Given`,`${message.author} is now OnDuty.`);  
                 message.channel.send(botembed);
                 let OnDuty = message.member.guild.roles.find("name", "OnDuty");
                 message.member.addRole(OnDuty)
@@ -69,7 +69,7 @@ client.on("message", async message => {
             if(cmd === offduty){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")
-                .addField("OffDuty Rank Given","You are now OffDuty.");  
+                .addField(`OffDuty Rank Given`,`${message.author} is now OffDuty.`);  
                 message.channel.send(botembed);
                 let OffDuty = message.member.guild.roles.find("name", "OffDuty");
                 message.member.addRole(OffDuty)

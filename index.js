@@ -112,8 +112,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
             if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
             // user moved from one voice channel to another (old channel ID is different from the new one)
             let hahaembed = new Discord.RichEmbed()
-                .setColor("#FF0000")
-                .addField(`10man Queue Logs`, `${newMember} joined **${newUserChannel}**`)
+                .setColor("#32CD32")
+                .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
                 .setTimestamp();
                 client.channels.get('530786248198062091').send(hahaembed)
     }

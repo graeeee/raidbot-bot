@@ -102,10 +102,11 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     if(!oldUserChannel && newUserChannel) {
         if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
         // user joined a channel without being in one previously (old channel is undefined, new channel is defined)
+
         let botembed = new Discord.RichEmbed()
             .setColor("#32CD32")
             .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
-            .message.member.avatarURL()
+            .message.member.avatarURL(`${newMember`)
             .setTimestamp();
             client.channels.get('530786248198062091').send(botembed)
 
@@ -115,7 +116,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         let hahaembed = new Discord.RichEmbed()
             .setColor("#FF0000")
             .addField(`10man Queue Logs`, `${newMember} left **${oldUserChannel}** to **${newUserChannel}**`)
-            .message.member.avatarURL()
             .setTimestamp();
             client.channels.get('530786248198062091').send(hahaembed)
     }

@@ -95,7 +95,7 @@ client.on("message", async message => {
                 message.member.removeRole(dab)
     }
 });
-bot.on('voiceStateUpdate', (oldMember, newMember) => {
+client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;
     let oldUserChannel = oldMember.voiceChannel;
 
@@ -106,7 +106,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             .setColor("#32CD32")
             .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
             .setTimestamp();
-            bot.channels.get('530786248198062091').send(botembed)
+            client.channels.get('530786248198062091').send(botembed)
 
     } else if (oldMember.voiceChannelID !== newMember.voiceChannelID) {
         if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
@@ -115,7 +115,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             .setColor("#FF0000")
             .addField(`10man Queue Logs`, `${newMember} left **${oldUserChannel}** to **${newUserChannel}**`)
             .setTimestamp();
-            bot.channels.get('530786248198062091').send(hahaembed)
+            client.channels.get('530786248198062091').send(hahaembed)
     }
 });
 client.login(process.env.BOT_TOKEN);

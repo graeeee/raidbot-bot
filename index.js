@@ -117,7 +117,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
                 .setTimestamp();
                 bot.channels.get('530786248198062091').send(hahaembed)
         }
-    });
     }
 });
 client.login(process.env.BOT_TOKEN);

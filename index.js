@@ -106,7 +106,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         let botembed = new Discord.RichEmbed()
             .setColor("#32CD32")
             .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
-            .message.member.avatarURL(`${newMember`)
             .setTimestamp();
             client.channels.get('530786248198062091').send(botembed)
 

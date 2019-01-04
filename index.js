@@ -116,7 +116,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
                 .addField(`10man Queue Logs`, `${newMember} joined **${newUserChannel}**`)
                 .setTimestamp();
                 bot.channels.get('530786248198062091').send(hahaembed)
-        }
     }
 });
 client.login(process.env.BOT_TOKEN);

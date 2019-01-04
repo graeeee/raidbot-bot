@@ -108,6 +108,16 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
             .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
             .setTimestamp();
             client.channels.get('530786248198062091').send(botembed)
+                } else if (oldMember.voiceChannelID !== newMember.voiceChannelID) {
+            if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
+            // user moved from one voice channel to another (old channel ID is different from the new one)
+            let hahaembed = new Discord.RichEmbed()
+                .setColor("#FF0000")
+                .addField(`10man Queue Logs`, `${newMember} joined **${newUserChannel}**`)
+                .setTimestamp();
+                bot.channels.get('530786248198062091').send(hahaembed)
+        }
+    });
     }
 });
 client.login(process.env.BOT_TOKEN);

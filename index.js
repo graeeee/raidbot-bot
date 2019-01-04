@@ -115,7 +115,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
                 .setColor("#FF0000")
                 .addField(`10man Queue Logs`, `${newMember} joined **${newUserChannel}**`)
                 .setTimestamp();
-                bot.channels.get('530786248198062091').send(hahaembed)
+                client.channels.get('530786248198062091').send(hahaembed)
     }
 });
 client.login(process.env.BOT_TOKEN);

@@ -100,22 +100,22 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     let oldUserChannel = oldMember.voiceChannel;
 
     if(!oldUserChannel && newUserChannel) {
-        if (oldMember.voiceChannelID !== '530787300930617347' && newMember.voiceChannelID !== '522102535410941962') return;
+        if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
         // user joined a channel without being in one previously (old channel is undefined, new channel is defined)
         let botembed = new Discord.RichEmbed()
             .setColor("#32CD32")
             .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
             .setTimestamp();
-            bot.channels.get('529566151731052566').send(botembed)
+            bot.channels.get('530786248198062091').send(botembed)
 
     } else if (oldMember.voiceChannelID !== newMember.voiceChannelID) {
-        if (oldMember.voiceChannelID !== '530787300930617347' && newMember.voiceChannelID !== '522102535410941962') return;
+        if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
         // user moved from one voice channel to another (old channel ID is different from the new one)
         let hahaembed = new Discord.RichEmbed()
             .setColor("#FF0000")
             .addField(`10man Queue Logs`, `${newMember} left **${oldUserChannel}** to **${newUserChannel}**`)
             .setTimestamp();
-            bot.channels.get('529566151731052566').send(hahaembed)
+            bot.channels.get('530786248198062091').send(hahaembed)
     }
 });
 client.login(process.env.BOT_TOKEN);

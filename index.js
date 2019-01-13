@@ -86,14 +86,22 @@ client.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let offduty = (`${prefix}reset`)
-    if((message.content === offduty)) {
+    let reset = (`${prefix}reset`)
+        if (message.channel.id === '529421034781147156') {
+            if((message.content!=reset)) {
+                await message.delete(5000)
+                message.author.send('Please use the command !onduty or !offduty.');
+            }
+            else{
+                if(cmd === reset){
                 let dab = message.member.guild.roles.find("name", "OffDuty");
                 let OnDuty = message.member.guild.roles.find("name", "OnDuty");
                 message.member.removeRole(OnDuty)
                 await 
                 message.member.removeRole(dab)
-    }
+                    }  
+                }   
+            }
 });
 client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;

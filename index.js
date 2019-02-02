@@ -87,15 +87,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     let oldUserChannel = oldMember.voiceChannel;
 
     if(!oldUserChannel && newUserChannel) {
-        if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
-        // user joined a channel without being in one previously (old channel is undefined, new channel is defined)
-
-        let botembed = new Discord.RichEmbed()
-            .setColor("#32CD32")
-            .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
-            .setTimestamp();
-            client.channels.get('530786248198062091').send(botembed)
-                } else if (oldMember.voiceChannelID !== undefined) {
             if (oldMember.voiceChannelID !== '245832221900931073' && newMember.voiceChannelID !== '245832221900931073') return;
             // user moved from one voice channel to another (old channel ID is different from the new one)
               let quotes = ("``")

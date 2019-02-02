@@ -124,7 +124,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
             let quotes = ("``")
                 let hahaembed = new Discord.RichEmbed()
                 .setColor("#FF0000")
-                .addField(`10man Queue Logs`, `${newMember} left **#10manqueue #2 ${quotes}->${quotes} **${newUserChannel}**`)
+                .addField(`10man Queue Logs`, `${newMember} left **#10manqueue #2** ${quotes}->${quotes} **${newUserChannel}**`)
                 .setTimestamp();
                 client.channels.get('530786248198062091').send(hahaembed)
                 }

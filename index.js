@@ -127,7 +127,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
                 .addField(`10man Queue Logs`, `${newMember} left **${newUserChannel}**`)
                 .setTimestamp();
                 client.channels.get('530786248198062091').send(hahaembed)
-    
+                }
 });
     //10manqueue1
     client.on('voiceStateUpdate', (oldMember, newMember) => {

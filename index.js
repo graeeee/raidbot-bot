@@ -81,7 +81,7 @@ client.on("message", async message => {
         }
     }
 });
-//10manqueue1
+//10manqueue logs 1
 client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;
     let oldUserChannel = oldMember.voiceChannel;
@@ -105,7 +105,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
                 client.channels.get('530786248198062091').send(hahaembed)
     }
 });
-//10manqueue2
+//10manqueue logs 2
 client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;
     let oldUserChannel = oldMember.voiceChannel;
@@ -127,7 +127,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
                 .addField(`10man Queue Logs`, `${newMember} left **#10man queue #2**`)
                 .setTimestamp();
                 client.channels.get('530786248198062091').send(hahaembed)
-    }
+    
 });
     //10manqueue1
     client.on('voiceStateUpdate', (oldMember, newMember) => {

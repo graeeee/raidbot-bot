@@ -82,7 +82,7 @@ client.on("message", async message => {
     }
 });
     //10manqueue1 roles
-    bot.on('voiceStateUpdate', (oldMember, newMember) => {
+    client.on('voiceStateUpdate', (oldMember, newMember) => {
         let newUserChannel = newMember.voiceChannel
         let oldUserChannel = oldMember.voiceChannel
       
@@ -107,7 +107,7 @@ client.on("message", async message => {
             }
       });
       //10manqueue2 roles
-      bot.on('voiceStateUpdate', (oldMember, newMember) => {
+   client.on('voiceStateUpdate', (oldMember, newMember) => {
         let newUserChannel = newMember.voiceChannel
         let oldUserChannel = oldMember.voiceChannel
       

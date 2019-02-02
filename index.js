@@ -100,7 +100,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
             // user moved from one voice channel to another (old channel ID is different from the new one)
             let hahaembed = new Discord.RichEmbed()
                 .setColor("#FF0000")
-                .addField(`10man Queue Logs`, `${newMember} left **#10man queue #1**`)
+                .addField(`10man Queue Logs`, `${newMember} left **${newUserChannel}**`)
                 .setTimestamp();
                 client.channels.get('530786248198062091').send(hahaembed)
     }
@@ -124,7 +124,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
             // user moved from one voice channel to another (old channel ID is different from the new one)
             let hahaembed = new Discord.RichEmbed()
                 .setColor("#FF0000")
-                .addField(`10man Queue Logs`, `${newMember} left **#10man queue #2**`)
+                .addField(`10man Queue Logs`, `${newMember} left **${newUserChannel}**`)
                 .setTimestamp();
                 client.channels.get('530786248198062091').send(hahaembed)
     
@@ -140,12 +140,12 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
            // User Joins a voice channel
         if (newMember.voiceChannelID === '245832221900931073') return;
         let manqueue1 = newMember.guild.roles.find("name", "10manqueue1");
-            newMember.addRole(manqueue1)
+            newMember.addRole(manqueue1);
         } else if(newUserChannel === undefined){
             // User leaves a voice channel
             if (newMember.voiceChannelID === '245832221900931073') return;
             let manqueue1 = newMember.guild.roles.find("name", "10manqueue1");
-                newMember.removeRole(manqueue1)
+                newMember.removeRole(manqueue1);
         }
       });
       //10manqueue2
@@ -159,12 +159,12 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
            // User Joins a voice channel
         if (newMember.voiceChannelID === '486205232066461711') return;
         let manqueue2 = newMember.guild.roles.find("name", "10manqueue2");
-            newMember.addRole(manqueue2)
+            newMember.addRole(manqueue2);
         } else if(newUserChannel === undefined){
             // User leaves a voice channel
             if (newMember.voiceChannelID === '486205232066461711') return;
-            let manqueue2 = newMember.guild.roles.find("name", "10manqueue2");
-                newMember.removeRole(manqueue2)
+        let manqueue2 = newMember.guild.roles.find("name", "10manqueue2");
+                newMember.removeRole(manqueue2);
         }
       });
 client.login(process.env.BOT_TOKEN);

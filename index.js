@@ -129,7 +129,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
     let onchess = (`${prefix}onchess`)
    
-    if (message.channel.id != '540133702039109642') {
+    if (message.channel.id === '540133702039109642') {
             if(cmd === onchess){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")
@@ -148,7 +148,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
     let offchess = (`${prefix}offchess`)
    
-    if (message.channel.id != '540133702039109642') {
+    if (message.channel.id === '540133702039109642') {
             if(cmd === offchess){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")

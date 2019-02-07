@@ -136,7 +136,7 @@ client.on("message", async message => {
             if(cmd === chess){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")
-                .addField(`playChess Rank Given`,`${message.author} is now wanting to play chess.`);  
+                .addField(`playChess Rank Given`,`${message.author} has toggled on the playChess rank.`);  
                 message.channel.send(botembed);
                 let playChess = message.member.guild.roles.find("name", "playChess");
                 message.member.addRole(playChess)

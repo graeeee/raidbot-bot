@@ -138,8 +138,8 @@ client.on("message", async message => {
                 let playChess = message.member.guild.roles.find("name", "playChess");
                 message.member.addRole(playChess)
                 await message.delete()
-              
             }
+       }
 });
 client.on("message", async message => {
     let prefix = botconfig.prefix;
@@ -159,5 +159,6 @@ client.on("message", async message => {
                 await message.delete()
               
             }
+    }
 });
 client.login(process.env.BOT_TOKEN);

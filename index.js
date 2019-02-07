@@ -121,4 +121,28 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
                 client.channels.get('530786248198062091').send(hahaembed)
                 }
 });
+//chess command
+client.on("message", async message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let chess = (`${prefix}chess`)
+   
+    if (message.channel.id != '543114314064855071') {
+            message.author.send('Please use the command in the <#543114314064855071> channel.');
+        }
+        else{
+            if(cmd === chess){
+                let botembed = new Discord.RichEmbed()
+                .setColor("#008000")
+                .addField(`playChess Rank Given`,`${message.author} is now wanting to play chess.`);  
+                message.channel.send(botembed);
+                let playChess = message.member.guild.roles.find("name", "playChess");
+                message.member.addRole(playChess)
+                await message.delete()
+              
+            }
+        }
+});
 client.login(process.env.BOT_TOKEN);

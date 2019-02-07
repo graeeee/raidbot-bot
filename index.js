@@ -137,7 +137,7 @@ client.on("message", async message => {
                 message.channel.send(botembed);
                 let playChess = message.member.guild.roles.find("name", "playChess");
                 message.member.addRole(playChess)
-                await message.delete()
+                await message.delete(10000)
             }
        }
 });
@@ -156,7 +156,7 @@ client.on("message", async message => {
                 message.channel.send(botembed);
                 let playChess = message.member.guild.roles.find("name", "playChess");
                 message.member.removeRole(playChess)
-                await message.delete()
+                await message.delete(10000)
               
             }
     }

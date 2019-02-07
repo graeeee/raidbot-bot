@@ -152,7 +152,7 @@ client.on("message", async message => {
     if (message.channel.id === '540133702039109642') {
             if(cmd === offchess){
                 let botembed = new Discord.RichEmbed()
-                .setColor("#008000")
+                .setColor("#FF0000")
                 .addField(`playChess Rank Taken`,`${message.author} has toggled off the playChess rank.`);  
                 message.channel.send(botembed);
                 let playChess = message.member.guild.roles.find("name", "playChess");

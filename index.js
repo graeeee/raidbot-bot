@@ -160,4 +160,13 @@ client.on("message", async message => {
             }
     }
 });
+client.on("message", async message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let dabcommand = (`<:dab:509149269022736404>`)
+    if(cmd === dabcommand){
+        message.channel.send("<@Symbols#2787>")
+    }
 client.login(process.env.BOT_TOKEN);

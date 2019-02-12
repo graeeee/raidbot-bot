@@ -167,7 +167,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
     let dabcommand = (`<:dab:509149269022736404>`)
     if(cmd === dabcommand){
-        message.channel.send("<@268489489259823104>");
+        message.channel.send("<@268489489259823104> <:dab:509149269022736404>");
     }
 });
 client.login(process.env.BOT_TOKEN);

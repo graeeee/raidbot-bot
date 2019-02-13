@@ -179,7 +179,6 @@ client.on("message", async message => {
   
     if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
       //check permission
-      let counsel = message.guild.roles.find("name", "10mancounsel");
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have this permission.");
   
       // get mute target or if none, end func
@@ -205,7 +204,7 @@ client.on("message", async message => {
         client.tempBannedUsers[banTarget.id] = {
           guild: message.guild.id,
           // convert 'day' number to milliseconds
-          time: Date.now() + parseInt(args[1]) * .000000864
+          time: Date.now() + parseInt(args[1]) * 60000
         }
         // after the target has been given the muted role, reply to confirm the action
         await muteTarget.addRole(role).catch(err => {console.log(err.stack); });

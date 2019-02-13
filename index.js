@@ -180,7 +180,7 @@ client.on("message", async message => {
     if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
       //check permission
       let counsel = message.guild.roles.find("name", "10mancounsel");
-      if (!message.member.roles.has(counsel)) return message.reply("You do not have this permission.");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have this permission.");
   
       // get mute target or if none, end func
       var banTarget = message.guild.member(message.mentions.users.first()) || message.guild.member(args[0]);

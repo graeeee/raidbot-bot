@@ -1,6 +1,7 @@
 const botconfig =require("./botconfig.json");
 const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true})
+client.tempMutedUsers = require('./temp-muted-users.json');
 
 client.on("ready", async () => {
     console.log(`${client.user.username} is online!`);

@@ -194,7 +194,7 @@ client.on("message", async message => {
     message.channel.send(`<@${toban.id}> has been unbanned`);
   }, ms(mutetime));
 
-
+  }
 //end of module
-}
+});
 client.login(process.env.BOT_TOKEN);

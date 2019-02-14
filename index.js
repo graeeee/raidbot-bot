@@ -215,7 +215,9 @@ client.on("message", async message => {
         .setColor("#FF0505")
         .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`);
         client.channels.get('530786248198062091').send(botembed);
-            }
-        }
-  });
+      });
+    }
+  }
+});
+
 client.login(process.env.BOT_TOKEN);

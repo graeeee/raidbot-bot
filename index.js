@@ -207,7 +207,10 @@ client.on("message", async message => {
           time: Date.now() + parseInt(args[1]) * 60000
         }
         // after the target has been given the muted role, reply to confirm the action
-        await banTarget.addRole(role).catch(err => {console.log(err.stack); });
+         await muteTarget.addRole(role).catch(err => {console.log(err.stack); });
+      // write the object to 'muted-users.json'
+      fs.writeFile('./temp-muted-users.json', JSON.stringify(client.tempMutedUsers, null, 4),  err => {
+        if (err) throw err;
         let botembed = new Discord.RichEmbed()
         .setColor("#FF0505")
         .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`);

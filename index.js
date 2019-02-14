@@ -231,5 +231,6 @@ client.on("message", async message => {
                 .addField("**rb-offchess**", "When activated, you will no longer get notifications for anyone who would like to use the <#540133702039109642> channel.")
                 .addField("<:dab:509149269022736404>", "Just tags <@268489489259823104> and makes him made \:)");
         message.channel.send(EmBeD);
+    }
  });
 client.login(process.env.BOT_TOKEN);

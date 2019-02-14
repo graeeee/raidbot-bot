@@ -209,8 +209,8 @@ client.on("message", async message => {
         // after the target has been given the muted role, reply to confirm the action
         await muteTarget.addRole(role).catch(err => {console.log(err.stack); });
         let botembed = new Discord.RichEmbed()
-        .setColor("#FF0505");
-        .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`)
+        .setColor("#FF0505")
+        .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`);
         client.channels.get('530786248198062091').send(botembed);
             }
         }

@@ -191,7 +191,7 @@ client.on("message", async message => {
 
   setTimeout(function(){
     tomute.removeRole(banrole.id);
-    message.channel.send(`<@${.id}> has been unbanned`);
+    message.channel.send(`<@${toban.id}> has been unbanned`);
   }, ms(mutetime));
 
 

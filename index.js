@@ -1,6 +1,6 @@
 const botconfig =require("./botconfig.json");
 const Discord = require("discord.js");
-const client = new Discord.Client({diableEveryone: true})
+const client = new Discord.Client({diableEveryone: true});
 client.tempMutedUsers = require('./temp-banned-users.json');
 
 client.on("ready", async () => {

@@ -186,11 +186,11 @@ client.on("message", async message => {
   let bantime = args[1];
   if(!bantime) return message.reply("You didn't specify a time for the ban.");
 
-  await(toban.addRole(banrole.id));
+  await(toban.addRole(banrole));
   message.reply(`<@${toban.id}> has been 10manbanned for ${ms(ms(bantime))}`);
 
   setTimeout(function(){
-    tomute.removeRole(banrole.id);
+    tomute.removeRole(banrole);
     message.channel.send(`<@${toban.id}> has been unbanned`);
   }, ms(mutetime));
 

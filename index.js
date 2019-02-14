@@ -92,7 +92,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
               let quotes = ("``")
               let hahaembed = new Discord.RichEmbed()
                 .setColor("#FF0000")
-                .addField(`10man Queue Logs`, `${newMember} left **${oldUserChannel}** ${quotes}->${quotes} **${newUserChannel}**`)
+                .addField(`10man Queue Logs`, `${newMember} left **${oldUserChannel}** ${quotes}->${quotes} **${newUserChannel}**`, message.author.avatarURL)
                 .setTimestamp();
                 client.channels.get('530786248198062091').send(hahaembed)
     }
@@ -107,7 +107,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         // user joined a channel without being in one previously (old channel is undefined, new channel is defined)
         let botembed = new Discord.RichEmbed()
             .setColor("#32CD32")
-            .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
+            .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`, message.author.avatarURL)
             .setTimestamp();
             client.channels.get('530786248198062091').send(botembed)
                 } else if (oldMember.voiceChannelID !== undefined) {
@@ -209,10 +209,28 @@ client.on("message", async message => {
         // after the target has been given the muted role, reply to confirm the action
         await muteTarget.addRole(role).catch(err => {console.log(err.stack); });
         let botembed = new Discord.RichEmbed()
-        .setColor("#FF0505")
-        .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`)
+        .setColor("#FF0505");
+        .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`);
         client.channels.get('530786248198062091').send(botembed);
             }
         }
   });
+//help command
+    client.on("message", async message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let help = (`${prefix}help`)
+    if(cmd === help){
+    message.channel.send("**Use rb-help 2** to see staff commands."); 
+                let EmBeD = new Discord.RichEmbed()
+                .setColor("#2ecc71")
+                .addField(`**rb- Commands**`)
+                .addField("**rb-onchess**", "When activated, you will get notifications for anyone who would like to use the <#540133702039109642> channel.")
+                .addField("**rb-offchess**", "When activated, you will no longer get notifications for anyone who would like to use the <#540133702039109642> channel.")
+                .addField("<:dab:509149269022736404>", "Just tags <@268489489259823104> and makes him made \:)");
+        message.channel.send(EmBeD);
+    }
+ });
 client.login(process.env.BOT_TOKEN);

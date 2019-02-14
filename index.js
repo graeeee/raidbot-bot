@@ -177,43 +177,24 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
   
   
-    if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
+  if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
       //check permission
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have this permission.");
-  
-      // get mute target or if none, end func
-      var banTarget = message.guild.member(message.mentions.users.first()) || message.guild.member(args[0]);
-  
-      //check if there is a mute target
-      if (!banTarget) return message.channel.send("You didn't specify a user to ban.");
-  
-      // if target is higher role than author (message.member), end func
-      if (banTarget.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition) return message.channel.send("You cannot ban someone with a higher or equal role than you.");
-  
-      // look for muted role in guild
-      // -------- CHANGE <muted role name> TO THE NAME OF YOUR MUTE ROLE ------
-      var role = message.guild.roles.find(r => r.name === "no10mans");
-  
-      // if target already has the role, 
-      if (banTarget.roles.has(role.id)) return message.channel.send("This player is already banned.");
-  
-      // if the mute author did not specify a time:
-      if (isNaN(args[1])) {
-        message.channel.send("You need to specify a time.");
-      } else {
-        client.tempBannedUsers[banTarget.id] = {
-          guild: message.guild.id,
-          // convert 'day' number to milliseconds
-          time: Date.now() + parseInt(args[1]) * 60000
-        }
-        // after the target has been given the muted role, reply to confirm the action
-        await muteTarget.addRole(role).catch(err => {console.log(err.stack); });
-        let botembed = new Discord.RichEmbed()
-        .setColor("#FF0505")
-        .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`);
-        client.channels.get('530786248198062091').send(botembed);
-          console.log(err)
-            }
-        }
-  });
+  let toban = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!toban) return message.reply("Couldn't find user.");
+  if(toban.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't ban this user.");
+  let banrole = message.guild.roles.find(`name`, "no10mans");
+  let bantime = args[1];
+  if(!bantime) return message.reply("You didn't specify a time for the ban.");
+
+  await(toban.addRole(banrole.id));
+  message.reply(`<@${toban.id}> has been 10manbanned for ${ms(ms(bantime))}`);
+
+  setTimeout(function(){
+    tomute.removeRole(banrole.id);
+    message.channel.send(`<@${.id}> has been unbanned`);
+  }, ms(mutetime));
+
+
+//end of module
+}
 client.login(process.env.BOT_TOKEN);

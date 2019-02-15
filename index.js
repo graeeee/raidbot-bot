@@ -171,13 +171,20 @@ client.on("message", async message => {
   
     if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
       //check permission
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have this permission.");
+        let nopermission = new Discord.RichEmbed()
+        .setColor("FF0505")
+        .addField("**Error**", "You do not have permission.");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(nopermission);
   
       // get mute target or if none, end func
       var banTarget = message.guild.member(message.mentions.users.first()) || message.guild.member(args[0]);
   
       //check if there is a mute target
-      if (!banTarget) return message.channel.send("You didn't specify a user to ban.");
+        let specifyuser = new Discord.RichEmbed()
+        .setColor("FF0505")
+        .addField("**Error**", "You did not specify a user to ban.");
+      if (!banTarget) return message.channel.send(specifyuser);
+     
   
       // if target is higher role than author (message.member), end func
       if (banTarget.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition) return message.channel.send("You cannot ban someone with a higher or equal role than you.");
@@ -191,7 +198,10 @@ client.on("message", async message => {
   
       // if the mute author did not specify a time:
       if (isNaN(args[1])) {
-        message.channel.send("You need to specify a time.");
+          let specifytime = new Discord.RichEmbed()
+          .setColor("#FF0505")
+          .addField("**Error**", "You did not specify a time.");
+        message.channel.send(specifytime);
       } else {
         client.tempBannedUsers[banTarget.id] = {
           guild: message.guild.id,

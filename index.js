@@ -173,7 +173,6 @@ client.on("message", async message => {
       //check permission
         let nopermission = new Discord.RichEmbed()
         .setColor("FF0505")
-        .setThumbnail(banTarget.user.avatarURL)
         .addField("**__Error__**", "You do not have permission.")
         .setTimestamp();   
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(nopermission);

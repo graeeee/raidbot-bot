@@ -196,7 +196,7 @@ client.on("message", async message => {
         client.tempBannedUsers[banTarget.id] = {
           guild: message.guild.id,
           // convert 'day' number to milliseconds
-          time: Date.now() + parseInt(args[1]) * 60000
+          time: Date.now() + parseInt(args[1]) * 6000
         }
         // after the target has been given the muted role, reply to confirm the action
          await banTarget.addRole(role).catch(err => {console.log(err.stack); });
@@ -205,7 +205,7 @@ client.on("message", async message => {
         if (err) throw err;
         let botembed = new Discord.RichEmbed()
         .setColor("#FF0505")
-        .addField(`${banTarget.user.username} has been banned for ${args[1]} minutes.`);
+        .addField(`10man Bans`, `${banTarget.user.username} has been banned for ${args[1]} minutes.`);
         client.channels.get('530786248198062091').send(botembed);
       });
     }

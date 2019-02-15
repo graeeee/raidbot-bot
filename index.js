@@ -179,7 +179,6 @@ client.on("message", async message => {
   
       // get mute target or if none, end func
       var banTarget = message.guild.member(message.mentions.users.first()) || message.guild.member(args[0]);
-  
       //check if there is a mute target
         let specifyuser = new Discord.RichEmbed()
         .setColor("FF0505")
@@ -205,7 +204,6 @@ client.on("message", async message => {
           .addField("**__Error__**", "This user is already banned.")
           .setTimestamp();
       if (banTarget.roles.has(role.id)) return message.channel.send(alreadybanned);
-  
       // if the mute author did not specify a time:
       if (isNaN(args[1])) {
           let specifytime = new Discord.RichEmbed()

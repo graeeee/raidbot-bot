@@ -169,9 +169,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
   
   
-    if (message.channel.id === '397912711524253696' && cmd === `${prefix}10manban`) {
-        if(message.channel.id !== '397912711524253696') {
-            message.channel.send("Please use <#397912711524253696> for 10manban commands.");
+    if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
       //check permission
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have this permission.");
   
@@ -213,7 +211,6 @@ client.on("message", async message => {
       });
     }
   }
-}
 });
 
 client.login(process.env.BOT_TOKEN);

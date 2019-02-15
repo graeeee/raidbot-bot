@@ -170,7 +170,7 @@ client.on("message", async message => {
   
   
     if (message.channel.id === '397912711524253696' && cmd === `${prefix}10manban`) {
-        if(!message.channe.id === '397912711524253696') {
+        if(!message.channel.id === '397912711524253696') {
             message.channel.send("Please use <#397912711524253696> for 10manban commands.");
       //check permission
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have this permission.");

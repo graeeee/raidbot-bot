@@ -169,7 +169,9 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
   
   
-    if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
+    if (message.channel.id === '397912711524253696' && cmd === `${prefix}10manban`) {
+        if(!message.channe.id === '397912711524253696') {
+            message.channel.send("Please use <#397912711524253696> for 10manban commands.");
       //check permission
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You do not have this permission.");
   
@@ -205,11 +207,13 @@ client.on("message", async message => {
         if (err) throw err;
         let botembed = new Discord.RichEmbed()
         .setColor("#FF0505")
-        .addField(`10man Bans`, `${banTarget.user.username} has been banned for ${args[1]} minutes.`);
+        .setThumbnail(banTarget.user.avatarURL)
+        .addField(`10man Bans`, `${banTarget.user.username} has been 10manbanned for ${args[1]} minutes.`);
         client.channels.get('530786248198062091').send(botembed);
       });
     }
   }
+}
 });
 
 client.login(process.env.BOT_TOKEN);

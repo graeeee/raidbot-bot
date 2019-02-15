@@ -1,7 +1,7 @@
 const botconfig =require("./botconfig.json");
 const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true});
-client.tempMutedUsers = require('./temp-banned-users.json');
+client.tempBannedUsers = require('./temp-banned-users.json');
 
 client.on("ready", async () => {
     console.log(`${client.user.username} is online!`);
@@ -159,17 +159,6 @@ client.on("message", async message => {
                 message.member.removeRole(playChess)
                 await message.delete(10000)
             }
-    }
-});
-client.on("message", async message => {
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let dabcommand = (`<:dab:509149269022736404>`)
-    if(cmd === dabcommand){
-        const lul = client.emojis.find(emoji => emoji.name === "LUL");
-        message.channel.send(`you thought i was gonna dab back ${lul}`);
     }
 });
 client.on("message", async message => {

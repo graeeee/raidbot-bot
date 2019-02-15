@@ -183,7 +183,6 @@ client.on("message", async message => {
       //check if there is a mute target
         let specifyuser = new Discord.RichEmbed()
         .setColor("FF0505")
-        .setThumbnail(banTarget.user.avatarURL)
         .addField("**__Error__*", "You did not specify a user to ban.")
         .setTimestamp();
       if (!banTarget) return message.channel.send(specifyuser);
@@ -192,7 +191,6 @@ client.on("message", async message => {
       // if target is higher role than author (message.member), end func
        let higherrole = new Discord.RichEmbed()
        .setColor("FF0505")
-       .setThumbnail(banTarget.user.avatarURL)
        .addField("**__Error__**", "You cannot ban someone with a higher or equal role than you.")
        .setTimestamp();
       if (banTarget.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition) return message.channel.send(higherrole);
@@ -204,7 +202,6 @@ client.on("message", async message => {
       // if target already has the role,
           let alreadybanned = new Discord.RichEmbed()
           .setColor("#FF0505")
-          .setThumbnail(banTarget.user.avatarURL)
           .addField("**__Error__**", "This user is already banned.")
           .setTimestamp();
       if (banTarget.roles.has(role.id)) return message.channel.send(alreadybanned);
@@ -213,7 +210,6 @@ client.on("message", async message => {
       if (isNaN(args[1])) {
           let specifytime = new Discord.RichEmbed()
           .setColor("#FF0505")
-          .setThumbnail(banTarget.user.avatarURL)
           .addField("**__Error__**", "You did not specify a time.")
           .setTimestamp();
         message.channel.send(specifytime);

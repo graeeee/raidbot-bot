@@ -173,7 +173,9 @@ client.on("message", async message => {
       //check permission
         let nopermission = new Discord.RichEmbed()
         .setColor("FF0505")
-        .addField("**__Error__**", "You do not have permission.");
+        .setThumbnail(banTarget.user.avatarURL)
+        .addField("**__Error__**", "You do not have permission.")
+        .setTimestamp();   
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(nopermission);
   
       // get mute target or if none, end func
@@ -182,13 +184,19 @@ client.on("message", async message => {
       //check if there is a mute target
         let specifyuser = new Discord.RichEmbed()
         .setColor("FF0505")
+        .setThumbnail(banTarget.user.avatarURL)
         .addField("**__Error__*", "You did not specify a user to ban.")
         .setTimestamp();
       if (!banTarget) return message.channel.send(specifyuser);
      
   
       // if target is higher role than author (message.member), end func
-      if (banTarget.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition) return message.channel.send("You cannot ban someone with a higher or equal role than you.");
+       let higherrole = new Discord.RichEmbed()
+       .setColor("FF0505")
+       .setThumbnail(banTarget.user.avatarURL)
+       .addField("**__Error__**", "You cannot ban someone with a higher or equal role than you.")
+       .setTimestamp();
+      if (banTarget.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition) return message.channel.send(higherrole);
   
       // look for muted role in guild
       // -------- CHANGE <muted role name> TO THE NAME OF YOUR MUTE ROLE ------
@@ -197,6 +205,7 @@ client.on("message", async message => {
       // if target already has the role,
           let alreadybanned = new Discord.RichEmbed()
           .setColor("#FF0505")
+          .setThumbnail(banTarget.user.avatarURL)
           .addField("**__Error__**", "This user is already banned.")
           .setTimestamp();
       if (banTarget.roles.has(role.id)) return message.channel.send(alreadybanned);
@@ -205,6 +214,7 @@ client.on("message", async message => {
       if (isNaN(args[1])) {
           let specifytime = new Discord.RichEmbed()
           .setColor("#FF0505")
+          .setThumbnail(banTarget.user.avatarURL)
           .addField("**__Error__**", "You did not specify a time.")
           .setTimestamp();
         message.channel.send(specifytime);

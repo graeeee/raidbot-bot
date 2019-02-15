@@ -206,7 +206,10 @@ client.on("message", async message => {
         let botembed = new Discord.RichEmbed()
         .setColor("#FF0505")
         .setThumbnail(banTarget.user.avatarURL)
-        .addField(`**10man Bans**`, `<@${banTarget.user.id}> has been **10manbanned** for **${args[1]}** minutes.`);
+        .setTitle("**10man Bans**)
+        .addField(`**User**`, `<@${banTarget.user.id}>`)
+        .addField(`**Ban Length**`, `${args[1]}m`)
+        .addField(`**Reason**`, `not finished`);
         client.channels.get('530786248198062091').send(botembed);
       });
     }

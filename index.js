@@ -173,7 +173,7 @@ client.on("message", async message => {
       //check permission
         let nopermission = new Discord.RichEmbed()
         .setColor("FF0505")
-        .addField("**Error**", "You do not have permission.");
+        .addField("**__Error__**", "You do not have permission.");
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(nopermission);
   
       // get mute target or if none, end func
@@ -182,7 +182,8 @@ client.on("message", async message => {
       //check if there is a mute target
         let specifyuser = new Discord.RichEmbed()
         .setColor("FF0505")
-        .addField("**Error**", "You did not specify a user to ban.");
+        .addField("**__Error__*", "You did not specify a user to ban.")
+        .setTimestamp();
       if (!banTarget) return message.channel.send(specifyuser);
      
   
@@ -193,14 +194,19 @@ client.on("message", async message => {
       // -------- CHANGE <muted role name> TO THE NAME OF YOUR MUTE ROLE ------
       var role = message.guild.roles.find(r => r.name === "no10mans");
   
-      // if target already has the role, 
-      if (banTarget.roles.has(role.id)) return message.channel.send("This player is already banned.");
+      // if target already has the role,
+          let alreadybanned = new Discord.RichEmbed()
+          .setColor("#FF0505")
+          .addField("**__Error__**", "This user is already banned.")
+          .setTimestamp();
+      if (banTarget.roles.has(role.id)) return message.channel.send(alreadybanned);
   
       // if the mute author did not specify a time:
       if (isNaN(args[1])) {
           let specifytime = new Discord.RichEmbed()
           .setColor("#FF0505")
-          .addField("**Error**", "You did not specify a time.");
+          .addField("**__Error__**", "You did not specify a time.")
+          .setTimestamp();
         message.channel.send(specifytime);
       } else {
         client.tempBannedUsers[banTarget.id] = {
@@ -216,10 +222,11 @@ client.on("message", async message => {
         let botembed = new Discord.RichEmbed()
         .setColor("#FF0505")
         .setThumbnail(banTarget.user.avatarURL)
-        .setTitle("***10man Bans***")
+        .setTitle("***__10man Bans__***")
         .addField(`**User**`, `<@${banTarget.user.id}>`)
         .addField(`**Ban Length**`, `${args[1]}m`)
-        .addField(`**Reason**`, `not finished`);
+        .addField(`**Reason**`, `not finished`)
+        .setTimestamp();
         client.channels.get('530786248198062091').send(botembed);
       });
     }

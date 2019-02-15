@@ -231,10 +231,10 @@ client.on("message", async message => {
         let botembed = new Discord.RichEmbed()
         .setColor("#FF0505")
         .setThumbnail(banTarget.user.avatarURL)
-        .setTitle("***__10man Bans__***")
-        .addField(`**User**`, `<@${banTarget.user.id}>`)
-        .addField(`**Ban Length**`, `${args[1]}m`)
-        .addField(`**Reason**`, `not finished`)
+        .setTitle("**__10man Bans__**")
+        .addField(`**User**`, `*<@${banTarget.user.id}>*`)
+        .addField(`**Ban Length**`, `*${args[1]}m*`)
+        .addField(`**Reason**`, `*not finished*`)
         .setTimestamp();
         client.channels.get('530786248198062091').send(botembed);
       });

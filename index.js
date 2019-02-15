@@ -168,7 +168,8 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
     let dabcommand = (`<:dab:509149269022736404>`)
     if(cmd === dabcommand){
-        message.channel.send("you thought i was gonna dab back <:LUL:545777893062737920>");
+        const lul = client.emojis.find(emoji => emoji.name === "LUL");
+        message.channel.send(`you thought i was gonna dab back ${lul}`);
     }
 });
 client.on("message", async message => {

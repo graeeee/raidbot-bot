@@ -206,7 +206,7 @@ client.on("message", async message => {
         let botembed = new Discord.RichEmbed()
         .setColor("#FF0505")
         .setThumbnail(banTarget.user.avatarURL)
-        .setTitle("**10man Bans**)
+        .setTitle("**10man Bans**")
         .addField(`**User**`, `<@${banTarget.user.id}>`)
         .addField(`**Ban Length**`, `${args[1]}m`)
         .addField(`**Reason**`, `not finished`);

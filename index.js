@@ -242,6 +242,7 @@ client.on("message", async message => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No permission.");
 
     let logEmbed = new Discord.RichEmbed()
+    .setThumbnail(logUser.user.avatarURL)
     .setDescription("**__Logged Ban__**")
     .setColor("#FF0505")
     .addField("Logged User", `*${logUser}*`)

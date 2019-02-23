@@ -238,7 +238,8 @@ client.on("message", async message => {
     let logUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!logUser) return message.channel.send("Can't find user!");
     let logReason = args.join(" ").slice(22);
-    if(!message.member.hasRole(`name`,`The Small Counsel`)) return message.channel.send("No permission.");
+    let adminRole = message.guild.roles.find("name", "The Small Counsel");
+    if(!message.member.has.role(adminRole)) return message.channel.send("No permission.");
     if(logUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be logged.");
 
     let logEmbed = new Discord.RichEmbed()

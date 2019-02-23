@@ -262,5 +262,6 @@ client.on("message", async message => {
         
         logChannel.send(logEmbed);
     }
+      }
       });
 client.login(process.env.BOT_TOKEN);

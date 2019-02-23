@@ -240,7 +240,7 @@ client.on("message", async message => {
         let logReason = args.join(" ").slice(22);
         let adminRole = message.guild.roles.find("name", "The Small Counsel");
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No permission.");
-        if (isNaN(args[2])) {
+        if (isNaN(args[1])) {
             let specifytime = new Discord.RichEmbed()
           .setColor("#FF0505")
           .addField("**__Error__**", "You did not specify a time.")
@@ -253,7 +253,7 @@ client.on("message", async message => {
         .setColor("#FF0505")
         .addField("Logged User", `*${logUser}*`)
         .addField("Logged By", `*<@${message.author.id}>*`)
-        .addField("Length", `${args[2]}d`)
+        .addField("Length", `${args[1]}d`)
         .addField("Reason", `*${logReason}*`)
         .setTimestamp(message.createdAt);
     

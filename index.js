@@ -244,9 +244,9 @@ client.on("message", async message => {
     let logEmbed = new Discord.RichEmbed()
     .setDescription("**__Logged Ban__**")
     .setColor("#FF0505")
-    .addField("Logged User", `${logUser}`)
-    .addField("Logged By", `**<@${message.author.id}>**`)
-    .addField("Reason", `*${logReason}*)
+    .addField("Logged User", `*${logUser}*`)
+    .addField("Logged By", `*<@${message.author.id}>*`)
+    .addField("Reason", `*${logReason}*`)
     .setTimestamp(message.createdAt);
 
     let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");

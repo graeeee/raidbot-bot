@@ -242,12 +242,12 @@ client.on("message", async message => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No permission.");
 
     let logEmbed = new Discord.RichEmbed()
-    .setDescription("**Logged Ban**")
+    .setDescription("**__Logged Ban__**")
     .setColor("#FF0505")
-    .addField("Logged User", `<@${logUser}>`)
-    .addField("Logged By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Time Of Ban", message.createdAt)
-    .addField("Reason", logReason);
+    .addField("Logged User", `${logUser}`)
+    .addField("Logged By", `**<@${message.author.id}>**`)
+    .addField("Reason", `*${logReason}*)
+    .setTimestamp(message.createdAt);
 
     let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
     if(!logChannel) return message.channel.send("Can't find logs channel.");

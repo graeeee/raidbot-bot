@@ -191,9 +191,6 @@ client.on("message", async message => {
         .addField(`**Reason**`, `*not finished*`)
         .setTimestamp();
         client.channels.get('530786248198062091').send(botembed);
-          setTimeout() => {
-              banTarget.removeRole(role)
-          }
       });
     }
   }

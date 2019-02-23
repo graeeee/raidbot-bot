@@ -205,8 +205,6 @@ client.on("message", async message => {
   
   
     if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
-        let adminRole = message.guild.roles.find("name", "rolename");
-          if (message.member.roles.has(allowedRole.id) {
       //check permission
         let nopermission = new Discord.RichEmbed()
         .setColor("FF0505")

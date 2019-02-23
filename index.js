@@ -222,4 +222,36 @@ client.on("message", async message => {
       if (!banTarget) return message.channel.send(specifyuser);
     }
     });
+client.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+  if(cmd === `${prefix}10manlog`){
+
+    //!kick @daeshan askin for it
+
+    let logUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!logUser) return message.channel.send("Can't find user!");
+    let logReason = args.join(" ").slice(22);
+    if(!message.member.hasRole(`name`,`The Small Counsel`)) return message.channel.send("No permission.");
+    if(logUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be logged.");
+
+    let logEmbed = new Discord.RichEmbed()
+    .setDescription("**Logged Ban**")
+    .setColor("#FF0505")
+    .addField("Logged User", `<@${logUser}>`)
+    .addField("Logged By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Time Of Ban", message.createdAt)
+    .addField("Reason", logReason);
+
+    let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
+    if(!logChannel) return message.channel.send("Can't find logs channel.");
+    
+    logChannel.send(logEmbed);
+
 client.login(process.env.BOT_TOKEN);

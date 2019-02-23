@@ -253,5 +253,6 @@ client.on("message", async message => {
     if(!logChannel) return message.channel.send("Can't find logs channel.");
     
     logChannel.send(logEmbed);
+  }
   });
 client.login(process.env.BOT_TOKEN);

@@ -239,7 +239,7 @@ client.on("message", async message => {
     if(!logUser) return message.channel.send("Can't find user!");
     let logReason = args.join(" ").slice(22);
     let adminRole = message.guild.roles.find("name", "The Small Counsel");
-    if(!message.member.roles.has(adminRole)) return message.channel.send("No permission.");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No permission.");
 
     let logEmbed = new Discord.RichEmbed()
     .setDescription("**Logged Ban**")

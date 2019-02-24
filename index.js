@@ -240,7 +240,7 @@ if(cmd === `${prefix}10manlog`){
 let logUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 if(!logUser) return message.channel.send("Can't find user!");
 let logReason = args.join(" ").slice(22);
-
+message.channel.send("User has been logged.);
 members[message.author.id]++;
 
 let logEmbed = new Discord.RichEmbed()

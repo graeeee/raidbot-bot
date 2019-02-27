@@ -255,7 +255,16 @@ let logEmbed = new Discord.RichEmbed()
 
 let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
 
+		
 logChannel.send(logEmbed);
+	
+	client.bans[logUser.id] = {
+	guild: message.guild.id,
+	time: Date.now() + parseInt(args[1]) * 1000
+}
+	fs.writeFile("./bans.json", JSON.stringify(client.bans, null, 4), err => {
+		if(err) throw err;
+		message.channel.send("User has been logged.");
 }
 });
 client.login(process.env.BOT_TOKEN);

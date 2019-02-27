@@ -224,7 +224,6 @@ client.on("message", async message => {
     }
     });
 var members = [];
-bot.mutes = require("./
 
 client.on("message", async message => {
 if(message.author.bot) return;

@@ -10,9 +10,7 @@ client.on("ready", async () => {
   client.user.setActivity("Raidboss Official Discord!", {type: "WATCHING"});
 
 });
-{
-	"ignore": ["*.json"]
-}
+
 //onduty2
 client.on("message", async message => {
     if(message.author.bot) return;

@@ -254,17 +254,28 @@ let logEmbed = new Discord.RichEmbed()
 .setTimestamp(message.createdAt);
 
 let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
+let logRole = guild.roles.find(r => r.name === 'no10mans');
 
-		
+member.addRole(logRole);
 logChannel.send(logEmbed);
 	
-	client.bans[logUser.id] = {
-	guild: message.guild.id,
-	time: Date.now() + parseInt(args[1]) * 1000
-}
-	fs.writeFile("./bans.json", JSON.stringify(client.bans, null, 4), err => {
-		if(err) throw err;
-		message.channel.send("User has been logged.");
+  client.setInterval(() => {
+      for(let i in client.tempMutedUsers) {
+          let time = client.logUser[i].time;
+          let guildId = client.logUser[i].guild;
+          let guild = client.guilds.get(guildId);
+          let member = guild.members.get(i);
+          let logRole = guild.roles.find(r => r.name === 'no10mans');
+          if(!Role) continue;
+          if(Date.now() > time) {
+              member.removeRole(logRole);
+              delete client.tempBannedUsers[i];
+              fs.writeFile('./temp-muted-users.json', JSON.stringify(client.tempMutedUsers), err => {
+                  if (err) throw err;
+              });
+          }
+      }
+  }, 30000);
 }
 });
 client.login(process.env.BOT_TOKEN);

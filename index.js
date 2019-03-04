@@ -260,17 +260,17 @@ member.addRole(logRole);
 logChannel.send(logEmbed);
 	
   client.setInterval(() => {
-      for(let i in client.tempMutedUsers) {
+      for(let i in client.tempBannedUsers) {
           let time = client.logUser[i].time;
           let guildId = client.logUser[i].guild;
           let guild = client.guilds.get(guildId);
           let member = guild.members.get(i);
           let logRole = guild.roles.find(r => r.name === 'no10mans');
-          if(!Role) continue;
+          if(!logRole) continue;
           if(Date.now() > time) {
               member.removeRole(logRole);
               delete client.tempBannedUsers[i];
-              fs.writeFile('./temp-muted-users.json', JSON.stringify(client.tempMutedUsers), err => {
+              fs.writeFile('./temp-banned-users.json', JSON.stringify(client.tempBannedUsers), err => {
                   if (err) throw err;
               });
           }

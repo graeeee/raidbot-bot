@@ -244,7 +244,7 @@ message.channel.send("User has been logged.");
     if (isNaN(args[1])) {
       message.channel.send('You did not specify how long the user should be muted!');
     } else {
-      client.tempMutedUsers[muteTarget.id] = {
+      client.tempMutedUsers[banTarget.id] = {
         guild: message.guild.id,
         // convert 'minutes' number to milliseconds
         time: Date.now() + parseInt(args[1]) * 60000

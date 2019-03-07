@@ -241,14 +241,6 @@ let logUser = message.guild.member(message.mentions.users.first() || message.gui
 if(!logUser) return message.channel.send("Can't find user!");
 let logReason = args.join(" ").slice(22);
 message.channel.send("User has been logged.");
-    if (isNaN(args[1])) {
-      message.channel.send('You did not specify how long the user should be banned!');
-    } else {
-      client.tempBannedUsers[banTarget.id] = {
-        guild: message.guild.id,
-        // convert 'minutes' number to milliseconds
-        time: Date.now() + parseInt(args[1]) * 60000
-      }
       // after the target has been given the mu
 members[message.author.id]++;
 

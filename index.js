@@ -266,5 +266,6 @@ let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
 let logRole = guild.roles.find(r => r.name === 'no10mans');
 logChannel.send(logEmbed);
     }
+}
 });
 client.login(process.env.BOT_TOKEN);

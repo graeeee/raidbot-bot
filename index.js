@@ -258,4 +258,18 @@ let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
 logChannel.send(logEmbed);
     }
 });
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+    let newUserChannel = newMember.voiceChannel;
+    let oldUserChannel = oldMember.voiceChannel;
+
+    if(!oldUserChannel && newUserChannel) {
+        if (newMember.voiceChannelID === '426051348287455232') return;
+        // user joined a channel without being in one previously (old channel is undefined, new channel is defined)
+        let botembed = new Discord.RichEmbed()
+            .setColor("#32CD32")
+            .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
+            .setTimestamp();
+            bot.channels.get('530786248198062091').send(botembed)
+    }
+});
 client.login(process.env.BOT_TOKEN);

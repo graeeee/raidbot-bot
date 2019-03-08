@@ -269,7 +269,8 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             .setColor("#32CD32")
             .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
             .setTimestamp();
-            bot.channels.get('530786248198062091').send(botembed)
+	    let reportsChannel = message.guild.channels.find(`name`, `reports`);
+            reportsChannel.send(botembed);
     }
 });
 client.login(process.env.BOT_TOKEN);

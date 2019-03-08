@@ -269,6 +269,5 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
             .setTimestamp();
 	    let reportsChannel = message.guild.channels.find(`name`, `reports`);
             reportsChannel.send(botembed);
-    }
 });
 client.login(process.env.BOT_TOKEN);

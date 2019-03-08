@@ -260,9 +260,7 @@ logChannel.send(logEmbed);
 });
 client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;
-    let oldUserChannel = oldMember.voiceChannel;
-
-    if(!oldUserChannel && newUserChannel) {
+	
         if (newMember.voiceChannelID === '426051348287455232') return;
         // user joined a channel without being in one previously (old channel is undefined, new channel is defined)
         let botembed = new Discord.RichEmbed()

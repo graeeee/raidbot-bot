@@ -275,5 +275,6 @@ if(!oldUserChannel && newUserChannel) {
         .setTimestamp();
     bot.channels.get('278495051670355987').send(botembed)
 }
+}
 });
 client.login(process.env.BOT_TOKEN);

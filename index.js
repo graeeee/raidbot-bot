@@ -258,7 +258,7 @@ let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
 logChannel.send(logEmbed);
     }
 });
-bot.on('voiceStateUpdate', (oldMember, newMember) => {
+client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;
     let oldUserChannel = oldMember.voiceChannel;
 

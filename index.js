@@ -258,21 +258,4 @@ let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
 logChannel.send(logEmbed);
     }
 });
-if(!oldUserChannel && newUserChannel) {
-    if (oldMember.voiceChannelID !== '426051348287455232' && newMember.voiceChannelID !== '426051348287455232') return;
-    // user joined a channel without being in one previously (old channel is undefined, new channel is defined)
-    let botembed = new Discord.RichEmbed()
-        .setColor("#FF0000")
-        .addField(`10man Queue Logs`, `${newMember} joined voice channel **${newUserChannel}**`)
-        .setTimestamp();
-    bot.channels.get('529566151731052566').send(botembed)
-} else if (oldMember.voiceChannelID !== newMember.voiceChannelID) {
-    if (oldMember.voiceChannelID !== '426051348287455232' && newMember.voiceChannelID !== '426051348287455232') return;
-    // user moved from one voice channel to another (old channel ID is different from the new one)
-    let botembed = new Discord.RichEmbed()
-        .setColor("#FF0000")
-        .addField(`Reports channel logs`, `${newMember} left **${oldUserChannel}**`)
-        .setTimestamp();
-    bot.channels.get('278495051670355987').send(botembed)
-}
 client.login(process.env.BOT_TOKEN);

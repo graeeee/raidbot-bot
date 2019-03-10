@@ -197,31 +197,6 @@ client.on("message", async message => {
     }
   }
 });
-client.on("message", async message => {
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-  
-  
-    if (message.channel.id === '545300546047967232' && cmd === `${prefix}10manban`) {
-      //check permission
-        let nopermission = new Discord.RichEmbed()
-        .setColor("FF0505")
-        .addField("**__Error__**", "You do not have permission.")
-        .setTimestamp();   
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(nopermission);
-  
-      // get mute target or if none, end func
-      var banTarget = message.guild.member(message.mentions.users.first()) || message.guild.member(args[0]);
-      //check if there is a mute target
-        let specifyuser = new Discord.RichEmbed()
-        .setColor("FF0505")
-        .addField("**__Error__*", "You did not specify a user to ban.")
-        .setTimestamp();
-      if (!banTarget) return message.channel.send(specifyuser);
-    }
-    });
 var members = [];
 
 client.on("message", async message => {

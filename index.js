@@ -243,8 +243,8 @@ client.on("message", async message => {
 	        let botembed = new Discord.RichEmbed()
                 .setColor("#808080")
                 .addField(`[Raidboss Servers]`,`Click any links below to automatically join that raidboss server.\n\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #1 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp1) \n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #2 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp2)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #3 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp3)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #4 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp4)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #5 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp5)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #6 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp6)`);
-	    message.channel.send(botembed)
-	    await message.channel.send("One Moment...")
+	    await message.channel.send(botembed)
+	    message.channel.send("One Moment...")
 	    .then(message => {
     message.delete(3000)
   })

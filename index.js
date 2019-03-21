@@ -242,7 +242,7 @@ client.on("message", async message => {
     if (cmd === `${prefix}servers`) {
 	        let botembed = new Discord.RichEmbed()
                 .setColor("#808080")
-                .addField(`[Raidboss Servers]`,`Click any links below to automatically join that raidboss server.\n\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #1 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://steam://connect/192.223.26.107:27015) \n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #2 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://steam://connect/192.223.27.140:27015)`);  
+                .addField(`[Raidboss Servers]`,`Click any links below to automatically join that raidboss server.\n\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #1 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp1) \n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #2 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp2)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #3 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp3)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #4 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp4)`);  
                 message.channel.send(botembed);
     }
 });

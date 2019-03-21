@@ -233,4 +233,17 @@ let logChannel = message.guild.channels.find(`name`, "10man_queue_logs");
 logChannel.send(logEmbed);
     }
 });
+client.on("message", async message => {
+	let prefix = botconfig.prefix;
+	let messageArray = message.content.split(" ");
+	let cmd = messageArray[0];
+	let args = messageArray.slice(1);
+
+    if (message.channel.id === '524913634451652609' && cmd === `${prefix}servers`) {
+	        let botembed = new Discord.RichEmbed()
+                .setColor("#808080")
+                .addField(`Raidboss Servers`,`Click any links below to automatically join that raidboss server.\n• 5v5 Comp #1 [Join](http://example.com)`);  
+                message.channel.send(botembed);
+    }
+});
 client.login(process.env.BOT_TOKEN);

@@ -242,7 +242,7 @@ client.on("message", async message => {
     if (cmd === `${prefix}servers`) {
 	        let botembed = new Discord.RichEmbed()
                 .setColor("#808080")
-                .addField(`Raidboss Servers`,`Click any links below to automatically join that raidboss server.\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #1 [[Join]](http://example.com)`);  
+                .addField(`Raidboss Servers`,`Click any links below to automatically join that raidboss server.\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #1 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](http://example.com)`);  
                 message.channel.send(botembed);
     }
 });

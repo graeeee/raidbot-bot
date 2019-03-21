@@ -239,7 +239,7 @@ client.on("message", async message => {
 	let cmd = messageArray[0];
 	let args = messageArray.slice(1);
 
-    if (message.channel.id === '524913634451652609' && cmd === `${prefix}servers`) {
+    if (cmd === `${prefix}servers`) {
 	        let botembed = new Discord.RichEmbed()
                 .setColor("#808080")
                 .addField(`Raidboss Servers`,`Click any links below to automatically join that raidboss server.\n<:raidboss:392574240643219456> • 5v5 Comp #1 [Join](http://example.com)`);  

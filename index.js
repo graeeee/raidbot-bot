@@ -247,7 +247,7 @@ client.on("message", async message => {
 	    await message.channel.send("One Moment...")
 	    .then(message => {
     message.delete(3000)
-  }))
+  })
     }
 });
 client.login(process.env.BOT_TOKEN);

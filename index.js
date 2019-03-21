@@ -239,7 +239,7 @@ client.on("message", async message => {
 	let cmd = messageArray[0];
 	let args = messageArray.slice(1);
 
-    if (cmd === `${prefix}5v5servers`) {
+    if (cmd === `${prefix}servers`) {
 	        let botembed = new Discord.RichEmbed()
                 .setColor("#808080")
                 .addField(`[Raidboss Servers]`,`<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #1 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp1) \n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #2 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp2)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #3 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp3)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #4 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp4)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #5 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp5)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #6 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp6)`);  

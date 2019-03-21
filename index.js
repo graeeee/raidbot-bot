@@ -244,13 +244,10 @@ client.on("message", async message => {
                 .setColor("#808080")
                 .addField(`[Raidboss Servers]`,`Click any links below to automatically join that raidboss server.\n\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #1 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp1) \n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #2 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp2)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #3 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp3)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #4 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp4)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #5 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp5)\n<:raidboss:392574240643219456> • [Raidboss] 5v5 Comp #6 [!WS !KNIFE | Monthly Ladder | 128 Tick] [[Join]](https://raidboss.org/servers/comp6)`);
 	    await message.channel.send(botembed)
-	    message.channel.send("One Moment...")
-	    .then(message => {
-    message.delete(5000)
 		let botembeddose = new Discord.RichEmbed()
 		.setColor("#808080")
 		.addField(`Raidboss Servers]`, `Click any links below to automatically join that raidboss server.\n\n<:raidboss:392574240643219456> • [Raidboss] Private 10 mans #1 | Raidboss.org/10man [[Join]](https://raidboss.org/servers/10man1)\n\n<:raidboss:392574240643219456> • [Raidboss] Private 10 mans #2 | Raidboss.org/10man [[Join]](https://raidboss.org/servers/10man2)\n<:raidboss:392574240643219456> • [Raidboss] Easy Surf [!WS !KNIFE | Monthly Ladder | Tier 1-6] [[Join]](https://raidboss.org/servers/surf)\n<:raidboss:392574240643219456> • [Raidboss] KZ/Climb [!WS !KNIFE !STORE | 128 Tick/Stats] [[Join]](https://raidboss.org/servers/kz)`);
-	    })
+	    message.channel.send(botembeddose)
     }
 });
 client.login(process.env.BOT_TOKEN);

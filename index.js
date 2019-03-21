@@ -246,7 +246,7 @@ client.on("message", async message => {
 	    await message.channel.send(botembed)
 		let botembeddose = new Discord.RichEmbed()
 		.setColor("#808080")
-		.addField(`Raidboss Servers]`, `Click any links below to automatically join that raidboss server.\n\n<:raidboss:392574240643219456> • [Raidboss] Private 10 mans #1 | Raidboss.org/10man [[Join]](https://raidboss.org/servers/10man1)\n<:raidboss:392574240643219456> • [Raidboss] Private 10 mans #2 | Raidboss.org/10man [[Join]](https://raidboss.org/servers/10man2)\n<:raidboss:392574240643219456> • [Raidboss] Easy Surf [!WS !KNIFE | Monthly Ladder | Tier 1-6] [[Join]](https://raidboss.org/servers/surf)\n<:raidboss:392574240643219456> • [Raidboss] KZ/Climb [!WS !KNIFE !STORE | 128 Tick/Stats] [[Join]](https://raidboss.org/servers/kz)\n<:raidboss:392574240643219456> • [Raidboss] FFA DM - Multi-CFG [!WS !KNIFE | Ladder | 128 Tick/Stats] [[Join]](raidboss.org/servers/dm)`);
+		.addField(`Raidboss Servers]`, `Click any links below to automatically join that raidboss server.\n\n<:raidboss:392574240643219456> • [Raidboss] Private 10 mans #1 | Raidboss.org/10man [[Join]](https://raidboss.org/servers/10man1)\n<:raidboss:392574240643219456> • [Raidboss] Private 10 mans #2 | Raidboss.org/10man [[Join]](https://raidboss.org/servers/10man2)\n<:raidboss:392574240643219456> • [Raidboss] Easy Surf [!WS !KNIFE | Monthly Ladder | Tier 1-6] [[Join]](https://raidboss.org/servers/surf)\n<:raidboss:392574240643219456> • [Raidboss] KZ/Climb [!WS !KNIFE !STORE | 128 Tick/Stats] [[Join]](https://raidboss.org/servers/kz)\n<:raidboss:392574240643219456> • [Raidboss] FFA DM - Multi-CFG [!WS !KNIFE | Ladder | 128 Tick/Stats] [[Join]](https://raidboss.org/servers/dm)`);
 	    message.channel.send(botembeddose)
     }
 });

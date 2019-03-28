@@ -273,7 +273,7 @@ client.on("message", async message =>
     if(cmd === `${prefix}queue1`)
     {
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "245832221900931073");
-      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + getjointime[n] + ")");
+      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
 
       const embed = new Discord.RichEmbed()
         .setTitle("Current Queue #1")

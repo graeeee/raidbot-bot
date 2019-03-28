@@ -257,7 +257,7 @@ let getjointime = [0];
 function cleanDate(a)
 {
   var d = new Date(a);
-  var c = (d.getHours()% 12 || 12) + ':' + d.getMinutes() + ':' + d.getSeconds();
+  var c = (d.getHours()) + ':' + d.getMinutes() + ':' + d.getSeconds();
   return c;
 }
 
@@ -277,7 +277,7 @@ client.on("message", async message =>
 
       const embed = new Discord.RichEmbed()
         .setTitle("Current Queue #1")
-        .setColor(3447003)
+        .setColor("#008000")
         .setDescription(membersInQueue.join("\n"))
         .setTimestamp()
 

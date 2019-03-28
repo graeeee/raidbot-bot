@@ -1,4 +1,4 @@
-yconst botconfig =require("./botconfig.json");
+const botconfig =require("./botconfig.json");
 const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true});
 client.tempBannedUsers = require('./temp-banned-users.json');

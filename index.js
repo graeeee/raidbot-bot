@@ -257,7 +257,7 @@ let getjointime = [0];
 function cleanDate(a)
 {
   var d = new Date(a);
-  var c = (d.getHours()) + ':' + d.getMinutes() + ':' + d.getSeconds();
+  var c = d.toTimeString();
   return c;
 }
 

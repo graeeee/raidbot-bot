@@ -250,4 +250,33 @@ client.on("message", async message => {
 	    message.channel.send(botembeddose)
     }
 });
+bot.on('voiceStateUpdate', (oldMember, newMember) =>
+{
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
+    {
+      if(newMember.voiceChannel === undefined || newMember.voiceChannel.id !== "245832221900931073")
+        return;
+
+      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
+      const m = newMember.guild.channels.get('545300546047967232').send(newMember.displayName + ' joined voice channel 10 man queue #1.')
+              .then((msg) => {
+                  getjointime[newMember] = msg.createdTimestamp;
+      });
+    }
+});
+
+bot.on('voiceStateUpdate', (oldMember, newMember) =>
+{
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
+    {
+      if(newMember.voiceChannel === undefined || newMember.voiceChannel.id !== "486205232066461711")
+        return;
+
+      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #2.');
+      const m = newMember.guild.channels.get('545300546047967232').send(newMember.displayName + ' joined voice channel 10 man queue #2.')
+              .then((msg) => {
+                  getjointime[newMember] = msg.createdTimestamp;
+      });
+    }
+});
 client.login(process.env.BOT_TOKEN);

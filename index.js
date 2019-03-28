@@ -257,7 +257,7 @@ let getjointime = [0];
 function cleanDate(a)
 {
   var d = new Date(a);
-  var c = d.toTimeString();
+  var c = ((d.getHours() % 12 || 12) - 4) + ':' + d.getMinutes() + ':' + d.getSeconds();
   return c;
 }
 
@@ -309,7 +309,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
       const m = newMember.guild.channels.get('545300546047967232').send(newMember.displayName + ' joined voice channel 10 man queue #1.')
               .then((msg) => {
-                  getjointime[newMember] = msg.createdAt;
+                  getjointime[newMember] = msg.createdTimestamp;
       });
     }
 });

@@ -250,4 +250,84 @@ client.on("message", async message => {
 	    message.channel.send(botembeddose)
     }
 });
+
+// Added by SeaC
+
+let getjointime = [0];
+
+function cleanDate(a)
+{
+  var d = new Date(a);
+  var c = (d.getHours()% 12 || 12) + ':' + d.getMinutes() + ':' + d.getSeconds();
+  return c;
+}
+
+bot.on("message", async message =>
+{
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+
+    if(cmd === `${prefix}queue1`)
+    {
+      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "245832221900931073");
+      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
+
+      const embed = new Discord.RichEmbed()
+        .setTitle("Current Queue #1")
+        .setColor(3447003)
+        .setDescription(membersInQueue.join("\n"))
+        .setTimestamp()
+
+      return message.channel.send({embed});
+    }
+
+    if(cmd === `${prefix}queue2`)
+    {
+      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "486205232066461711");
+      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
+
+      const embed = new Discord.RichEmbed()
+        .setTitle("Current Queue #2")
+        .setColor(4444444)
+        .setDescription(membersInQueue.join("\n"))
+        .setTimestamp()
+
+      return message.channel.send({embed});
+    }
+});
+
+bot.on('voiceStateUpdate', (oldMember, newMember) =>
+{
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
+    {
+      if(newMember.voiceChannel === undefined || newMember.voiceChannel.id !== "245832221900931073")
+        return;
+
+      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
+      const m = newMember.guild.channels.get('545300546047967232').send(newMember.displayName + ' joined voice channel 10 man queue #1.')
+              .then((msg) => {
+                  getjointime[newMember] = msg.createdTimestamp;
+      });
+    }
+});
+
+bot.on('voiceStateUpdate', (oldMember, newMember) =>
+{
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
+    {
+      if(newMember.voiceChannel === undefined || newMember.voiceChannel.id !== "486205232066461711")
+        return;
+
+      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #2.');
+      const m = newMember.guild.channels.get('545300546047967232').send(newMember.displayName + ' joined voice channel 10 man queue #2.')
+              .then((msg) => {
+                  getjointime[newMember] = msg.createdTimestamp;
+      });
+    }
+});
+
 client.login(process.env.BOT_TOKEN);

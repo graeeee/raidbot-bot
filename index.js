@@ -299,7 +299,7 @@ bot.on("message", async message =>
     }
 });
 
-bot.on('voiceStateUpdate', (oldMember, newMember) =>
+client.on('voiceStateUpdate', (oldMember, newMember) =>
 {
     if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
     {
@@ -314,7 +314,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) =>
     }
 });
 
-bot.on('voiceStateUpdate', (oldMember, newMember) =>
+client.on('voiceStateUpdate', (oldMember, newMember) =>
 {
     if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
     {

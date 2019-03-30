@@ -301,9 +301,9 @@ client.on("message", async message =>
 
 client.on('voiceStateUpdate', (oldMember, newMember) =>
 {
-    if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannelID !== newMember.voiceChannelID)
     {
-      if(newMember.voiceChannel === undefined || newMember.voiceChannel.id !== "245832221900931073")
+      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "245832221900931073")
         return;
 
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
@@ -316,9 +316,9 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 
 client.on('voiceStateUpdate', (oldMember, newMember) =>
 {
-    if(oldMember.voiceChannel === undefined || oldMember.voiceChannel.id !== newMember.voiceChannel.id)
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannelID !== newMember.voiceChannelID)
     {
-      if(newMember.voiceChannel === undefined || newMember.voiceChannel.id !== "486205232066461711")
+      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "486205232066461711")
         return;
 
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #2.');

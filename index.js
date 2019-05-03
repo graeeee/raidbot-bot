@@ -157,7 +157,6 @@ client.on("message", async message => {
       if (banTarget.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition) return message.channel.send(higherrole);
   
       // look for muted role in guild
-      // -------- CHANGE <muted role name> TO THE NAME OF YOUR MUTE ROLE ------
       var role = message.guild.roles.find(r => r.name === "no10mans");
   
       // if target already has the role,
